@@ -137,7 +137,6 @@ Správca skladu (admin):
 - Dashboard so štatistikami a grafmi dostupnosti.
 - Plánovanie akcií (entita Event) a automatická kontrola dostupnosti techniky na dané obdobie.
 - Kontrola kapacity vozidla a upozornenie na jeho preťaženie.
-- Export zoznamu naloženej techniky do PDF (nakladací list).
+- Export zoznamu naloženej techniky do PDF.
 - Notifikácie pri poškodení techniky alebo blížiacom sa servise.
 - Záznam histórie zmien.
-- Použitie externého API alebo HTML5 API (napr. skenovanie QR kódov kamerou).
