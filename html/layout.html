@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonusBox - Rozloženie celej aplikácie</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-check">
+  <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+  <div class="app-container">
+    
+    <header class="app-header">
+      <div class="brand-wrapper">
+        <label for="sidebar-toggle" class="hamburger-btn" aria-label="Otvoriť menu">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <div class="brand">SonusBox</div>
+      </div>
+
+      <div class="header-search">
+        <input type="text" placeholder="Hľadať...">
+      </div>
+
+      <div class="header-user">
+        <button class="btn-icon" aria-label="Upozornenia">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+        <div class="user-badge">Ján Novák (Technik)</div>
+      </div>
+    </header>
+
+    <aside class="app-sidebar">
+      <nav class="nav-group">
+        <label for="sidebar-toggle" class="sidebar-close-btn" aria-label="Zatvoriť menu">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+
+        <a href="#" class="nav-link"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a>
+        <a href="technika.html" class="nav-link active"><i class="fa-solid fa-microphone-lines"></i> Technika</a>
+        <a href="#" class="nav-link"><i class="fa-solid fa-box-archive"></i> Boxy</a>
+        <a href="#" class="nav-link"><i class="fa-solid fa-truck"></i> Vozidlá</a>
+        <a href="#" class="nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Servis</a>
+        
+        <div class="nav-divider"></div>
+        
+        <a href="#" class="nav-link"><i class="fa-solid fa-tags"></i> Kategórie</a>
+        <a href="#" class="nav-link"><i class="fa-solid fa-users"></i> Používatelia</a>
+      </nav>
+
+      <div class="nav-group">
+        <a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Odhlásiť sa</a>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <section class="wireframe-placeholder">
+        <div class="placeholder-text">[ Priestor pre obsah stránky ]</div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      &copy; 2025 SonusBox | v1.0.0
+    </footer>
+
+  </div>
+</body>
+</html>
