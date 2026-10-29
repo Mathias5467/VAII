@@ -1,0 +1,127 @@
+<nav class="breadcrumb">Domov &gt; Technika</nav>
+
+<div class="page-header">
+    <h1 class="page-title">Evidencia techniky</h1>
+    <button class="btn-primary">
+        <i class="fa-solid fa-plus"></i> Nové zariadenie
+    </button>
+</div>
+
+<section class="filter-card">
+    <div class="filter-group">
+        <input type="text" placeholder="Názov, SN...">
+    </div>
+    <div class="filter-group">
+        <select>
+            <option value="">Kategória: Všetky</option>
+            <option value="1">Mikrofóny</option>
+            <option value="2">Mixpulty</option>
+            <option value="3">Kabeláž</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <select>
+            <option value="">Stav: Všetky</option>
+            <option value="1">Dostupná</option>
+            <option value="2">V servise</option>
+            <option value="3">Poškodená</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <select>
+            <option value="">Box: Všetky</option>
+            <option value="1">BOX-A1</option>
+            <option value="2">BOX-C3</option>
+            <option value="3">Sklad</option>
+        </select>
+    </div>
+    <button class="btn-outline">Reset</button>
+</section>
+
+<div class="table-responsive">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th class="col-sn">SN</th>
+                <th>Zariadenie</th>
+                <th class="col-category">Kategória</th>
+                <th class="col-box">Box</th>
+                <th>Stav</th>
+                <th>Akcie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-sn" data-label="SN">#0812</td>
+                <td data-label="Zariadenie"><strong>Shure SM58</strong></td>
+                <td class="col-category" data-label="Kategória">Mikrofóny</td>
+                <td class="col-box" data-label="Box"><span class="box-badge">BOX-A1</span></td>
+                <td data-label="Stav"><span class="badge badge-success">Dostupná</span></td>
+                <td data-label="Akcie">
+                    <div class="actions-cell">
+                        <button class="btn-action" title="Zobraziť detail"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-action" title="Upraviť"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-action" title="Záznam servisu"><i class="fa-solid fa-wrench"></i></button>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-sn" data-label="SN">#0441</td>
+                <td data-label="Zariadenie"><strong>Soundcraft Si</strong></td>
+                <td class="col-category" data-label="Kategória">Mixpulty</td>
+                <td class="col-box" data-label="Box"><span class="box-badge">Sklad</span></td>
+                <td data-label="Stav"><span class="badge badge-warning">V servise</span></td>
+                <td data-label="Akcie">
+                    <div class="actions-cell">
+                        <button class="btn-action" title="Zobraziť detail"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-action" title="Upraviť"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-action" title="Záznam servisu"><i class="fa-solid fa-wrench"></i></button>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-sn" data-label="SN">#1092</td>
+                <td data-label="Zariadenie"><strong>XLR Kábel 10m</strong></td>
+                <td class="col-category" data-label="Kategória">Kabeláž</td>
+                <td class="col-box" data-label="Box"><span class="box-badge">BOX-C3</span></td>
+                <td data-label="Stav"><span class="badge badge-danger">Poškodená</span></td>
+                <td data-label="Akcie">
+                    <div class="actions-cell">
+                        <button class="btn-action" title="Zobraziť detail"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-action" title="Upraviť"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-action" title="Záznam servisu"><i class="fa-solid fa-wrench"></i></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination">
+    <div>&lt; [1] 2 3 &gt;</div>
+    <div>Zobrazených 25 zo 142 položiek</div>
+</div>
+
+<section class="modal-preview">
+    <header class="modal-header">
+        <h3>Záznam poškodenia / servis</h3>
+        <button class="btn-icon" aria-label="Zatvoriť"><i class="fa-solid fa-xmark"></i></button>
+    </header>
+    <div class="modal-body">
+        <div class="radio-group">
+            <label><input type="radio" name="modal_stav"> Dostupná</label>
+            <label><input type="radio" name="modal_stav" checked> Poškodená</label>
+            <label><input type="radio" name="modal_stav"> Servis</label>
+        </div>
+        <textarea placeholder="Popis závady..."></textarea>
+        <div class="upload-zone">
+            <i class="fa-solid fa-cloud-arrow-up"></i> [ + Nahrať foto ]
+        </div>
+    </div>
+    <footer class="modal-footer">
+        <button class="btn-outline">Zrušiť</button>
+        <button class="btn-primary">Uložiť</button>
+    </footer>
+</section>
