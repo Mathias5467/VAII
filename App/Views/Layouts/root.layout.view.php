@@ -46,7 +46,7 @@
         <a href="?c=home" class="nav-link <?= (!isset($_GET['a']) || $_GET['a'] == 'index') ? 'active' : '' ?>">
             <i class="fa-solid fa-table-cells-large"></i> Dashboard
         </a>
-        <a href="?c=home&a=technika" class="nav-link <?= (isset($_GET['a']) && $_GET['a'] == 'technika') ? 'active' : '' ?>">
+        <a href="?c=equipment" class="nav-link <?= (isset($_GET['c']) && $_GET['c'] == 'equipment') ? 'active' : '' ?>">
             <i class="fa-solid fa-microphone-lines"></i> Technika
         </a>
         <a href="#" class="nav-link"><i class="fa-solid fa-box-archive"></i> Boxy</a>
