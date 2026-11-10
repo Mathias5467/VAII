@@ -49,7 +49,9 @@
         <a href="?c=equipment" class="nav-link <?= (isset($_GET['c']) && $_GET['c'] == 'equipment') ? 'active' : '' ?>">
             <i class="fa-solid fa-microphone-lines"></i> Technika
         </a>
-        <a href="#" class="nav-link"><i class="fa-solid fa-box-archive"></i> Boxy</a>
+        <a href="?c=box" class="nav-link <?= (isset($_GET['c']) && $_GET['c'] == 'box') ? 'active' : '' ?>">
+            <i class="fa-solid fa-box-archive"></i> Boxy
+        </a>
         <a href="#" class="nav-link"><i class="fa-solid fa-truck"></i> Vozidlá</a>
         <a href="#" class="nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Servis</a>
         

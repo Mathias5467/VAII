@@ -1,5 +1,6 @@
 <?php
     /** @var \App\Models\Equipment|null $equipment */
+    /** @var \App\Models\Box[] $boxes */
     $equipment = $equipment ?? null;
 ?>
 
@@ -39,8 +40,14 @@
 
         <div style="margin-bottom: 1rem;">
             <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Umiestnenie (Box):</label>
-            <input type="text" name="box" required style="width:100%; padding:0.6rem; border-radius:6px; border:1px solid #cbd5e1;"
-                   value="<?= $equipment ? htmlspecialchars($equipment->getBox()) : 'Sklad' ?>">
+            <select name="box_id" style="width:100%; padding:0.6rem; border-radius:6px; border:1px solid #cbd5e1;">
+                <option value="">-- Sklad (Bez boxu) --</option>
+                <?php foreach ($boxes as $b): ?>
+                    <option value="<?= $b->getId() ?>" <?= ($equipment && $equipment->getBoxId() == $b->getId()) ? 'selected' : '' ?>>
+                        <?= htmlspecialchars($b->getCode() . ' - ' . $b->getDescription()) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div style="margin-bottom: 1.5rem;">

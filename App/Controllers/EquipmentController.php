@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Box;
 use App\Models\Equipment;
 use Framework\Core\BaseController;
 use Framework\Http\Request;
@@ -11,48 +12,48 @@ class EquipmentController extends BaseController
 {
     public function index(Request $request): Response
     {
-        // Opravené: Načítame zoznam všetkých záznamov pre tabuľku
-        $equipment = Equipment::getAll();
-
         return $this->html([
-            'equipment' => $equipment
+            'equipment' => Equipment::getAll()
         ]);
     }
 
     public function create(Request $request): Response
     {
         return $this->html([
-            'equipment' => null
+            'equipment' => null,
+            'boxes' => Box::getAll()
         ], 'form');
     }
 
     public function edit(Request $request): Response
     {
-        $id = $request->value('id');
-        $equipment = Equipment::getOne($id);
-        return $this->html(['equipment' => $equipment], 'form');
+        $id = $_GET['id'] ?? null;
+        return $this->html([
+            'equipment' => Equipment::getOne($id),
+            'boxes' => Box::getAll()
+        ], 'form');
     }
 
     public function store(Request $request): Response
     {
-        $id = $request->value('id');
-
+        $id = $_POST['id'] ?? null;
         $equipment = ($id) ? Equipment::getOne($id) : new Equipment();
 
-        $equipment->setSerialNumber($request->value('serial_number'));
-        $equipment->setName($request->value('name'));
-        $equipment->setCategory($request->value('category'));
-        $equipment->setBox($request->value('box'));
-        $equipment->setStatus($request->value('status'));
+        $equipment->setSerialNumber($_POST['serial_number'] ?? '');
+        $equipment->setName($_POST['name'] ?? '');
+        $equipment->setCategory($_POST['category'] ?? '');
+        $equipment->setStatus($_POST['status'] ?? '');
+
+        $box_id = $_POST['box_id'] ?? '';
+        $equipment->setBoxId($box_id === '' ? null : (int)$box_id);
 
         $equipment->save();
-
         return $this->redirect('?c=equipment');
     }
 
     public function delete(Request $request): Response
     {
-        $id = $request->value('id');
+        $id = $_GET['id'] ?? null;
         $equipment = Equipment::getOne($id);
 
         if ($equipment) {

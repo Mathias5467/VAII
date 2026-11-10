@@ -29,7 +29,10 @@
                     <td data-label="SN"><?= htmlspecialchars($item->getSerialNumber()) ?></td>
                     <td data-label="Zariadenie"><strong><?= htmlspecialchars($item->getName()) ?></strong></td>
                     <td data-label="Kategória"><?= htmlspecialchars($item->getCategory()) ?></td>
-                    <td data-label="Box"><span class="box-badge"><?= htmlspecialchars($item->getBox()) ?></span></td>
+                    <td data-label="Box">
+                        <?php $boxObj = $item->getBoxObj(); ?>
+                        <span class="box-badge"><?= $boxObj ? htmlspecialchars($boxObj->getCode()) : 'Sklad' ?></span>
+                    </td>
                     <td data-label="Stav">
                         <?php 
                             $status = $item->getStatus();
