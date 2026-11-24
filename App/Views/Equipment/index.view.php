@@ -11,26 +11,48 @@
     </a>
 </div>
 
+<div class="filter-card" id="equipment-filters">
+    <div class="filter-group">
+        <input type="text" data-filter="search" placeholder="Hľadať SN, názov alebo box...">
+    </div>
+    <div class="filter-group">
+        <select data-filter="category"><option value="">Všetky kategórie</option></select>
+    </div>
+    <div class="filter-group">
+        <select data-filter="status"><option value="">Všetky stavy</option></select>
+    </div>
+    <div class="filter-group">
+        <select data-filter="box"><option value="">Všetky boxy</option></select>
+    </div>
+    <button type="button" class="btn-outline" data-filter="reset">Zrušiť filtre</button>
+</div>
+
+<div id="equipment-stats" style="margin-bottom: 1rem;"></div>
+
 <div class="table-responsive">
-    <table class="data-table">
+    <table class="data-table" id="equipment-table">
         <thead>
             <tr>
-                <th>SN</th>
-                <th>Zariadenie</th>
-                <th>Kategória</th>
-                <th>Box</th>
-                <th>Stav</th>
+                <th data-sort="serial">SN</th>
+                <th data-sort="name">Zariadenie</th>
+                <th data-sort="category">Kategória</th>
+                <th data-sort="box">Box</th>
+                <th data-sort="status">Stav</th>
                 <th>Akcie</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($equipment as $item): ?>
-                <tr>
+                <?php $boxObj = $item->getBoxObj(); ?>
+                <tr data-serial="<?= htmlspecialchars($item->getSerialNumber()) ?>"
+                    data-name="<?= htmlspecialchars($item->getName()) ?>"
+                    data-category="<?= htmlspecialchars($item->getCategory()) ?>"
+                    data-box="<?= $boxObj ? htmlspecialchars($boxObj->getCode()) : 'Sklad' ?>"
+                    data-status="<?= htmlspecialchars($item->getStatus()) ?>">
                     <td data-label="SN"><?= htmlspecialchars($item->getSerialNumber()) ?></td>
                     <td data-label="Zariadenie"><strong><?= htmlspecialchars($item->getName()) ?></strong></td>
                     <td data-label="Kategória"><?= htmlspecialchars($item->getCategory()) ?></td>
                     <td data-label="Box">
-                        <?php $boxObj = $item->getBoxObj(); ?>
                         <span class="box-badge"><?= $boxObj ? htmlspecialchars($boxObj->getCode()) : 'Sklad' ?></span>
                     </td>
                     <td data-label="Stav">
@@ -60,3 +82,5 @@
         </tbody>
     </table>
 </div>
+
+<script src="js/equipment.js"></script>
